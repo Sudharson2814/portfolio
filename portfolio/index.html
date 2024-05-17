@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sudharson - Portfolio</title>
+  <link rel="icon" type="image/png" href="/profile.jpg">
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="name">Sudharson</div>
+      <div class="nav-content">
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#certifications">Certifications</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#projects">Projects</a></li>
+        </ul>
+        <div class="profile-pic"></div>
+      </div>
+      <div class="burger-menu">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <h1>Hello, I'm Sudharson</h1>
+        <p>Computer Science Student at VIT University</p>
+        <a href="/sudharson4128@gmail.com (1).pdf" class="btn" download="Sudharson_Resume.pdf">View Resume</a>
+      </div>
+    </section>
+    <section class="skills" id="skills">
+      <h2>Skills</h2>
+      <div class="skills-container">
+        <span>Web Development</span>
+        <span>User Experience Design (UED)</span>
+        <span>Mobile Application Development</span>
+        <span>Database Development</span>
+        <span>Web Design</span>
+        <span>Cloud Management</span>
+        <span>Blogging</span>
+        <span>Search Engine Optimization (SEO)</span>
+        <span>Software Testing</span>
+      </div>
+    </section>
+    <section class="certifications" id="certifications">
+      <h2>Certifications</h2>
+      <div class="certifications-container">
+        <div class="certification">
+          <div class="cert-text">
+            <h3>Python Programming</h3>
+            <p>Issued 07-12-2022 to 16-12-2022</p>
+          </div>
+          <div class="cert-image">
+            <img src="/python.jpg" alt="Python Programming" />
+          </div>
+        </div>
+        <div class="certification">
+          <div class="cert-text">
+            <h3>Data Science and Hadoop</h3>
+            <p>Issued 22-06-2022 to 27-06-2022</p>
+          </div>
+          <div class="cert-image">
+            <img src="/data.jpg" alt="Data Science and Hadoop" />
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="education" id="education">
+      <h2>Education</h2>
+      <p>Vellore Institute of Technology (VIT), Vellore, Tamil Nadu, India</p>
+      <p>Bachelor of Computer Applications</p>
+      <p>2021 - 2024</p>
+    </section>
+    <section class="contact" id="contact">
+      <h2>Contact</h2>
+      <p>Email: sudharson4128@gmail.com</p>
+      <p>Phone: (+91) 9363260842</p>
+
+      <form class="contact-form" id="contactForm">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required />
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+
+        <button type="submit">Send Message</button>
+      </form>
+      <p id="successMessage" style="display: none; color: green">
+        Message sent successfully!
+      </p>
+    </section>
+   
+    <section class="projects" id="projects">
+      <h2>Projects</h2>
+      <div class="projects-container">
+        <div class="project">
+          <h3>Distributed File System</h3>
+          <p>Designed and implemented a distributed file system using Python</p>
+        </div>
+        <div class="project">
+          <h3>Cryptocurrency Price Tracker</h3>
+          <p>Developed a web application that tracks the price of Bitcoin, Ethereum, and other cryptocurrencies</p>
+        </div>
+        <div class="project">
+          <h3>Social Media Dashboard</h3>
+          <p>Built a social media dashboard with React that allows users to view, like, and comment on posts from Facebook, Instagram, and Twitter</p>
+        </div>
+        <div class="project">
+          <h3>Chat Room Application</h3>
+          <p>Created a chat room application with Node.js and Socket.IO</p>
+        </div>
+        <div class="project">
+          <h3>Personal Blog</h3>
+          <p>Wrote a personal blog using Gatsby, a static site generator built on React</p>
+        </div>
+      </div>
+    </section>
+    <section class="social-media">
+      <h2>Social Media</h2>
+      <div class="social-links">
+        <a href="https://www.linkedin.com/in/sudharson-s-593711244?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/Sudharson2814"><i class="fab fa-github"></i></a>
+      </div>
+    </section>
+  </main>
+  <script>
+     document.addEventListener("DOMContentLoaded", function () {
+      const burgerMenu = document.querySelector(".burger-menu");
+      const navContent = document.querySelector(".nav-content");
+
+      burgerMenu.addEventListener("click", function () {
+        navContent.classList.toggle("active");
+      });
+
+      // Handle form submission
+      document.getElementById("contactForm").addEventListener("submit", function (event) {
+        event.preventDefault(); // Prevent default form submission
+        // You can add additional validation here if needed
+        // Simulate successful submission
+        document.getElementById("successMessage").style.display = "block";
+      });
+    });
+
+
+    document.addEventListener("DOMContentLoaded", function () {
+  const projects = document.querySelectorAll(".project");
+
+  // Check if a project is in the viewport
+  function isInViewport(element) {
+    const rect = element.getBoundingClientRect();
+    return (
+      rect.top >= 0 &&
+      rect.left >= 0 &&
+      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+  }
+
+  // Add visible class to projects in the viewport
+  function addVisibleClass() {
+    projects.forEach((project) => {
+      if (isInViewport(project)) {
+        project.classList.add("visible");
+      } else {
+        project.classList.remove("visible"); // Remove visible class if not in viewport
+      }
+    });
+  }
+
+  // Add event listener to scroll
+  window.addEventListener("scroll", addVisibleClass);
+
+  // Add event listener to resize (in case of resizing the window)
+  window.addEventListener("resize", addVisibleClass);
+
+  // Initial check on page load
+  addVisibleClass();
+});
+document.addEventListener("DOMContentLoaded", function () {
+  const skills = document.querySelectorAll(".skills-container span");
+
+  function isInViewport(element) {
+    const rect = element.getBoundingClientRect();
+    return (
+      rect.top >= 0 &&
+      rect.left >= 0 &&
+      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+  }
+
+  function addVisibleClass() {
+    skills.forEach((skill, index) => {
+      if (isInViewport(skill) && !skill.classList.contains("visible")) {
+        skill.classList.add("visible");
+        if (index % 2 === 0) {
+          skill.style.animation = "slideInFromLeft 1s forwards";
+        } else {
+          skill.style.animation = "slideInFromRight 1s forwards";
+        }
+      }
+    });
+  }
+
+  window.addEventListener("scroll", addVisibleClass);
+  window.addEventListener("resize", addVisibleClass);
+  addVisibleClass();
+});
+
+
+
+  </script>
+</body>
+</html>
+
+       
